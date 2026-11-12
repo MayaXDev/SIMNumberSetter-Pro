@@ -15,6 +15,8 @@
     <color name="neon_violet">#7C4DFF</color>
     <color name="neon_green">#00E676</color>
     <color name="neon_red">#FF1744</color>
+    <color name="neon_pink">#FF4081</color>
+    <color name="neon_amber">#FFD600</color>
     
     <color name="text_primary">#FFFFFF</color>
     <color name="text_secondary">#90A4AE</color>

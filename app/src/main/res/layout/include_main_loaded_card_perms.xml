@@ -146,7 +146,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_marginStart="8dp"
-                    android:text="APatch / KernelSU Superuser"
+                    android:text="APatch / KernelSU / Magisk SU"
                     android:textSize="12sp"
                     android:textColor="@color/text_primary" />
 
@@ -158,6 +158,41 @@
                     android:textSize="11sp"
                     android:fontFamily="@font/google_sans_text_bold"
                     android:textColor="@color/neon_green" />
+
+            </LinearLayout>
+
+            <!-- Permission 4: LSPosed Scope Check -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingVertical="4dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/icon_perm_lsposed"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_bolt"
+                    app:tint="@color/neon_amber" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:text="LSPosed Scope (Phone &amp; Framework)"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_primary" />
+
+                <TextView
+                    android:id="@+id/status_perm_lsposed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Optional (Root OK)"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/google_sans_text_bold"
+                    android:textColor="@color/neon_cyan" />
 
             </LinearLayout>
 

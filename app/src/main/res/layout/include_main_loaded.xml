@@ -40,6 +40,13 @@
             android:layout_marginTop="16dp" />
 
         <include
+            android:id="@+id/include_main_loaded_card_terminal"
+            layout="@layout/include_main_loaded_card_terminal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" />
+
+        <include
             android:id="@+id/include_main_loaded_card_info"
             layout="@layout/include_main_loaded_card_info"
             android:layout_width="match_parent"

@@ -64,6 +64,7 @@ class MainFragment: Fragment() {
         setupDiagnostics()
         setupSlotSelector()
         setupGuide()
+        setupTerminal()
         checkAndPromptLegacyPackageUninstall()
     }
 
@@ -173,6 +174,43 @@ class MainFragment: Fragment() {
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         updatePermissionState()
+    }
+
+    private fun setupTerminal() {
+        with(binding.includeMainLoaded.includeMainLoadedCardTerminal) {
+            btnTerminalExec.setOnClickListener {
+                val cmd = inputTerminalCmd.text?.toString() ?: ""
+                if (cmd.isNotBlank()) {
+                    viewModel.executeTerminalCommand(cmd)
+                    inputTerminalCmd.setText("")
+                }
+            }
+
+            btnCmdQuerySiminfo.setOnClickListener {
+                viewModel.executeTerminalCommand("content query --uri content://telephony/siminfo --projection sim_id:number")
+            }
+
+            btnCmdCheckRoot.setOnClickListener {
+                viewModel.executeTerminalCommand("id; which su")
+            }
+
+            btnCmdTelephonyLogs.setOnClickListener {
+                viewModel.executeTerminalCommand("logcat -d -s TelephonyProvider,TelephonyRegistry,com.android.phone -t 25")
+            }
+
+            btnCmdClearLogs.setOnClickListener {
+                viewModel.clearTerminalLogs()
+            }
+
+            viewLifecycleOwner.lifecycleScope.launchWhenResumed {
+                viewModel.terminalLogs.collect { logs ->
+                    textTerminalLogs.text = logs
+                    terminalScrollView.post {
+                        terminalScrollView.fullScroll(View.FOCUS_DOWN)
+                    }
+                }
+            }
+        }
     }
 
     private fun setupGuide() {

@@ -24,6 +24,7 @@ abstract class MainViewModel : ViewModel() {
     abstract val phoneCount: StateFlow<Int>
     abstract val isRooted: StateFlow<Boolean>
     abstract val isHookConnected: StateFlow<Boolean>
+    abstract val terminalLogs: StateFlow<String>
 
     abstract fun onNumberChanged(newNumber: String)
     abstract fun onSlotSelected(slotIndex: Int)
@@ -35,6 +36,9 @@ abstract class MainViewModel : ViewModel() {
     abstract fun openGitHubReleases(context: Context)
     abstract fun grantAllPermissionsViaRoot()
     abstract suspend fun uninstallLegacyAppViaRoot(): Boolean
+    abstract fun executeTerminalCommand(cmd: String)
+    abstract fun clearTerminalLogs()
+    abstract fun appendTerminalLog(log: String)
 
     sealed class State {
         data class Loading(val loadType: LoadType) : State()
@@ -74,6 +78,11 @@ class MainViewModelImpl(
     override val phoneCount = MutableStateFlow(1)
     override val isRooted = MutableStateFlow(false)
     override val isHookConnected = MutableStateFlow(false)
+    override val terminalLogs = MutableStateFlow(
+        "[root@android]# System Telephony Console Initialized.\n" +
+        "[root@android]# APatch / KernelSU / Magisk SU detected.\n" +
+        "[root@android]# SIM Number Setter Pro v1.1 Cyber Edition ready.\n"
+    )
 
     override val state = MutableStateFlow<State>(State.Loading(LoadType.LOADING))
     override val number = combine(customNumber, state) { n, s ->
@@ -157,6 +166,35 @@ class MainViewModelImpl(
             res.isSuccess
         } catch (t: Throwable) {
             false
+        }
+    }
+
+    override fun clearTerminalLogs() {
+        terminalLogs.value = "[root@android]# Console cleared.\n"
+    }
+
+    override fun appendTerminalLog(log: String) {
+        terminalLogs.value = terminalLogs.value + log + "\n"
+    }
+
+    override fun executeTerminalCommand(cmd: String) {
+        val trimmed = cmd.trim()
+        if (trimmed.isEmpty()) return
+        appendTerminalLog("[root@android]# $trimmed")
+        viewModelScope.launch {
+            try {
+                val res = rootRepository.runRootCommand(trimmed)
+                val out = res.out.joinToString("\n")
+                if (out.isNotEmpty()) {
+                    appendTerminalLog(out)
+                } else if (res.isSuccess) {
+                    appendTerminalLog("Command returned 0 (Success)")
+                } else {
+                    appendTerminalLog("Command failed with code ${res.code}")
+                }
+            } catch (t: Throwable) {
+                appendTerminalLog("Error executing command: ${t.localizedMessage}")
+            }
         }
     }
 

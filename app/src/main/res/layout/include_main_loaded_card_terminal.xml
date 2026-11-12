@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="4dp"
+    app:strokeWidth="1.2dp"
+    app:strokeColor="@color/neon_green"
+    app:cardBackgroundColor="@color/surface_cyber"
+    style="@style/Widget.Material3.CardView.Filled">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_terminal"
+                app:tint="@color/neon_green" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="ROOT TERMINAL &amp; SYSTEM LOGS"
+                android:textSize="12sp"
+                android:letterSpacing="0.06"
+                android:fontFamily="@font/google_sans_text_bold"
+                android:textColor="@color/neon_green" />
+
+            <TextView
+                android:id="@+id/terminal_status_badge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ROOT SHELL"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/neon_green" />
+
+        </LinearLayout>
+
+        <!-- Terminal Console Screen -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="12dp"
+            android:background="#0A0E17"
+            android:padding="10dp">
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/terminal_scroll_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <TextView
+                    android:id="@+id/text_terminal_logs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:textSize="11sp"
+                    android:lineSpacingExtra="2dp"
+                    android:textColor="#39FF14"
+                    android:text="[root@android]# System Telephony Console Initialized.\n[root@android]# APatch / KernelSU / Magisk SU ready.\n" />
+
+            </androidx.core.widget.NestedScrollView>
+
+        </FrameLayout>
+
+        <!-- Command Input & Action Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_terminal_cmd_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxStrokeColor="@color/neon_green"
+                app:hintTextColor="@color/neon_green">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_terminal_cmd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:hint="Enter root command (e.g. id, logcat)"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textColor="@color/text_primary"
+                    android:textSize="12sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_terminal_exec"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:cornerRadius="10dp"
+                app:backgroundTint="@color/surface_cyber_elevated"
+                app:strokeColor="@color/neon_green"
+                app:strokeWidth="1dp"
+                android:fontFamily="@font/google_sans_text_bold"
+                android:textColor="@color/neon_green"
+                android:text="RUN" />
+
+        </LinearLayout>
+
+        <!-- Quick Command Shortcuts -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_cmd_query_siminfo"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:textSize="10sp"
+                    android:textColor="@color/neon_cyan"
+                    android:text="QUERY SIMINFO" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_cmd_check_root"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:textSize="10sp"
+                    android:textColor="@color/neon_cyan"
+                    android:text="CHECK SU (ID)" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_cmd_telephony_logs"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:textSize="10sp"
+                    android:textColor="@color/neon_cyan"
+                    android:text="TELEPHONY LOGCAT" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_cmd_clear_logs"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:textSize="10sp"
+                    android:textColor="@color/neon_red"
+                    android:text="CLEAR CONSOLE" />
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -38,15 +38,17 @@ class RootRepositoryImpl: RootRepository {
     override suspend fun getLine1NumberViaRoot(slotIndex: Int): String? {
         return withContext(Dispatchers.IO) {
             try {
-                val result = Shell.su("content query --uri content://telephony/siminfo --projection number --where \"sim_id=$slotIndex\"").exec()
+                val result = Shell.su("content query --uri content://telephony/siminfo --projection sim_id:number").exec()
                 if (!result.isSuccess) return@withContext null
                 for (line in result.out) {
-                    // Output format: Row: 0 number=91XXXXXXXXXX
-                    val regex = Regex("number=([^,\\s]*)")
-                    val match = regex.find(line)
-                    if (match != null) {
-                        val num = match.groupValues[1]
-                        return@withContext if (num == "null") "" else num
+                    // Output format: Row: 0 sim_id=0, number=91XXXXXXXXXX
+                    if (line.contains("sim_id=$slotIndex")) {
+                        val regex = Regex("number=([^,\\s]*)")
+                        val match = regex.find(line)
+                        if (match != null) {
+                            val num = match.groupValues[1]
+                            return@withContext if (num == "null" || num == "NULL") "" else num
+                        }
                     }
                 }
                 ""
@@ -59,7 +61,7 @@ class RootRepositoryImpl: RootRepository {
     override suspend fun setLine1NumberViaRoot(slotIndex: Int, number: String): Boolean {
         return withContext(Dispatchers.IO) {
             try {
-                val cmd = "content update --uri content://telephony/siminfo --bind number:s:$number --where \"sim_id=$slotIndex\""
+                val cmd = "content update --uri content://telephony/siminfo --bind number:s:$number --where sim_id=$slotIndex"
                 val result = Shell.su(cmd).exec()
                 result.isSuccess
             } catch (t: Throwable) {
