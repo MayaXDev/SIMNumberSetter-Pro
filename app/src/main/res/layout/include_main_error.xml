@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="@color/bg_cyber"
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="6dp"
+        app:strokeWidth="1.5dp"
+        app:strokeColor="@color/neon_red"
+        app:cardBackgroundColor="@color/surface_cyber">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="24dp">
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:src="@drawable/ic_error"
+                app:tint="@color/neon_red" />
+
+            <TextView
+                android:id="@+id/main_error_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="@string/main_error_title"
+                android:textSize="20sp"
+                android:fontFamily="@font/google_sans_text_bold"
+                android:textColor="@color/text_primary" />
+
+            <TextView
+                android:id="@+id/main_error_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary"
+                android:fontFamily="@font/google_sans_text"
+                tools:text="Error Content" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/main_error_restart_telephony"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="20dp"
+                app:cornerRadius="14dp"
+                app:icon="@drawable/ic_refresh"
+                app:iconGravity="textStart"
+                app:iconTint="#0A0E17"
+                app:backgroundTint="@color/neon_cyan"
+                android:textColor="#0A0E17"
+                android:fontFamily="@font/google_sans_text_bold"
+                android:text="Auto-Restart Telephony Stack" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/main_error_telegram"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:cornerRadius="14dp"
+                app:icon="@drawable/ic_telegram"
+                app:iconGravity="textStart"
+                app:iconTint="@color/neon_cyan"
+                app:backgroundTint="@color/surface_cyber_elevated"
+                android:textColor="@color/neon_cyan"
+                android:fontFamily="@font/google_sans_text_bold"
+                android:text="Official Telegram (@MayaXDev)" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/main_error_close"
+                style="@style/ThemeOverlay.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/text_secondary"
+                android:text="@string/main_error_close" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

@@ -1,0 +1,85 @@
+<resources>
+    <string name="app_name" translatable="false">SIM Number Setter Pro</string>
+    <string name="app_subtitle" translatable="false">MayaXDev Systems · v1.1</string>
+    <string name="app_version_branded" translatable="false">v1.1 · @MayaXDev Edition</string>
+    <string name="xposed_desc" translatable="false">MayaXDev advanced telephony hook to program internal SIM MSISDN subscriber number</string>
+
+    <!-- Branding & Telegram -->
+    <string name="brand_card_title">MayaXDev Tool Suite</string>
+    <string name="brand_card_desc">High-performance Android systems engineering &amp; integrity tooling.</string>
+    <string name="btn_join_telegram">Official Telegram (@MayaXDev)</string>
+    <string name="btn_telegram_dev">Developer Hub (@Itcalldeveloper)</string>
+    <string name="btn_telegram_group">Discussion &amp; Support</string>
+
+    <!-- Diagnostics & Status -->
+    <string name="diag_title">Engine &amp; Service Status</string>
+    <string name="status_root_ok">Root Status: Active (uid=0)</string>
+    <string name="status_root_fail">Root Status: Missing or Denied</string>
+    <string name="status_hook_ok">Telephony Hook: Connected &amp; Ready</string>
+    <string name="status_hook_fail">Telephony Hook: Waiting for Hook</string>
+    <string name="btn_restart_telephony">Auto-Restart Telephony Stack</string>
+    <string name="msg_restarting_telephony">Restarting com.android.phone…</string>
+    <string name="msg_telephony_restarted">Telephony stack cycled. Ready to bind.</string>
+
+    <!-- Slot Selection -->
+    <string name="slot_selector_title">Target SIM Hardware Slot</string>
+    <string name="sim_slot_1">SIM 1 (Slot 0)</string>
+    <string name="sim_slot_2">SIM 2 (Slot 1)</string>
+
+    <string name="main_error_title">Engine Status Alert</string>
+    <string name="main_error_close">Dismiss</string>
+
+    <!-- Step by Step Guide -->
+    <string name="guide_title">Setup &amp; Verification Guide</string>
+    <string name="guide_content"><![CDATA[
+<b>KAISE SETUP KAREIN (STEP-BY-STEP GUIDE):</b><br/><br/>
+<b>Step 1 — LSPosed Scope Selection:</b><br/>
+• LSPosed Manager app kholiye.<br/>
+• <i>Modules</i> tab me jaakar <b>SIM Number Setter Pro</b> par tap karein.<br/>
+• Module ko <b>Enable</b> karein aur Scope me:<br/>
+&nbsp;&nbsp;✔ <b>Phone (com.android.phone)</b><br/>
+&nbsp;&nbsp;✔ <b>System Framework (android)</b><br/>
+select karein.<br/><br/>
+
+<b>Step 2 — Auto-Restart Telephony (Bina Phone Reboot Ke):</b><br/>
+• Upar diye gaye <b>\"⚡ Auto-Restart Telephony Stack\"</b> button par tap karein.<br/>
+• Ye root shell se <i>com.android.phone</i> ko restart karega aur LSPosed hook turant attach ho jayega.<br/><br/>
+
+<b>Step 3 — SIM Number Write Karein:</b><br/>
+• Agar Dual SIM hai toh <b>SIM 1</b> ya <b>SIM 2</b> choose karein.<br/>
+• Apna mobile number international format me enter karein (Jaise: <b>+919876543210</b>).<br/>
+• <b>\"SAVE NUMBER TO SIM\"</b> par tap karein.<br/>
+• Ye number permanent SIM card ke internal hardware record (EF_MSISDN) me write ho jata hai.<br/><br/>
+
+<b>Step 4 — UPI Apps &amp; Settings Verification:</b><br/>
+• Phone Settings > <i>About Phone > Status > SIM Status</i> me check karein, aapka number dikhega.<br/>
+• <b>Paytm / PhonePe / GPay</b> open karein — number turant verify hoga aur \"Unknown SIM\" error khatam ho jayega!<br/><br/>
+
+<b>Author &amp; Support Channels:</b><br/>
+Developed by <b>@MayaXDev</b> &amp; <b>@Itcalldeveloper</b> — Official Telegram updates &amp; kernel projects.
+    ]]></string>
+
+    <string name="main_loaded_card_edit_title">SIM Number Configuration</string>
+    <string name="main_loaded_card_edit_content">Stored SIM Number: %1s</string>
+    <string name="main_loaded_card_edit_number_empty">Not Programmed (Unknown)</string>
+    <string name="main_loaded_card_edit_input_hint">Enter Mobile Number (e.g. +91XXXXXXXXXX)</string>
+    <string name="main_loaded_card_edit_input_save">SAVE NUMBER TO SIM</string>
+
+    <!-- Validation -->
+    <string name="val_invalid_format">Format Warning: Enter full number with country code (e.g. +919876543210) or 10 digits.</string>
+    <string name="val_valid_format">✓ Valid international phone number format</string>
+
+    <string name="loading_loading">Interrogating Telephony &amp; SIM…</string>
+    <string name="loading_saving">Writing to SIM Hardware Memory…</string>
+
+    <string name="error_no_root">Root permission was not granted. Please allow Superuser access in APatch, KernelSU, or Magisk.</string>
+    <string name="error_no_permission">Failed to grant required telephony dump permissions via root shell.</string>
+    <string name="error_no_xposed">Telephony hook is not attached. Enable \"Phone (com.android.phone)\" in LSPosed scope and tap \"Auto-Restart Telephony Stack\" above.</string>
+    <string name="error_save_failed">Failed to write to SIM card. Your carrier SIM might have operator write-lock enabled on EF_MSISDN.</string>
+
+    <!-- Menu Items (Pure MayaXDev & Itcalldeveloper) -->
+    <string name="menu_telegram">@MayaXDev Channel</string>
+    <string name="menu_telegram_dev">@Itcalldeveloper Channel</string>
+    <string name="menu_telegram_support">MayaXDev Discussion</string>
+    <string name="menu_restart_telephony">Cycle Telephony Stack</string>
+</resources>

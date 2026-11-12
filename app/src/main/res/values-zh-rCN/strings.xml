@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="main_error_title">错误</string>
+    <string name="main_error_close">关闭</string>
+    <string name="guide_title">关于与指南</string>
+    <string name="guide_content">SIM Number Setter Pro 由 @MayaXDev 开发维护。该工具将号码写至 SIM 卡的\"用户号码\"寄存器区域(EF_MSISDN)。</string>
+    <string name="main_loaded_card_edit_title">编辑</string>
+    <string name="main_loaded_card_edit_content">当前号码: %1s</string>
+    <string name="main_loaded_card_edit_number_empty">未知</string>
+    <string name="main_loaded_card_edit_input_hint">输入号码</string>
+    <string name="main_loaded_card_edit_input_save">保存</string>
+    <string name="loading_loading">正在加载</string>
+    <string name="loading_saving">正在保存</string>
+    <string name="error_no_root">设备未 Root 或权限被拒绝,该app需要 Root 以工作</string>
+    <string name="error_no_permission">使用 Root 获取权限失败,请重启app重试</string>
+    <string name="error_no_xposed">无法连接到 Xposed 服务或 SIM 卡不存在,请确保模块已启用且已重启</string>
+    <string name="error_save_failed">保存号码失败,你的设备可能不支持该功能</string>
+    <string name="menu_telegram">MayaXDev Telegram</string>
+    <string name="menu_telegram_support">MayaXDev 讨论组</string>
+    <string name="menu_restart_telephony">重启电话服务</string>
+</resources>

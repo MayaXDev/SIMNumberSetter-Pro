@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="24dp"
+    app:cardElevation="6dp"
+    app:strokeWidth="1.5dp"
+    app:strokeColor="@color/neon_cyan"
+    app:cardBackgroundColor="@color/surface_cyber"
+    style="@style/Widget.Material3.CardView.Filled">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@mipmap/ic_launcher"
+                android:scaleType="fitCenter" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:gravity="center_vertical"
+                android:background="@drawable/ic_launcher_background"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp">
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:src="@drawable/ic_bolt"
+                    app:tint="#0A0E17" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="MAYAXDEV VIP"
+                    android:textStyle="bold"
+                    android:textSize="11sp"
+                    android:letterSpacing="0.08"
+                    android:textColor="#0A0E17" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="10dp"
+                android:text="v1.1 CYBER PRO"
+                android:textSize="12sp"
+                android:letterSpacing="0.05"
+                android:textColor="@color/neon_cyan"
+                android:fontFamily="@font/google_sans_text_bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ACTIVE"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/neon_green" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="SIM Number Setter Pro"
+            android:textSize="22sp"
+            android:fontFamily="@font/google_sans_text_bold"
+            android:textColor="@color/text_primary" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Hardware Telephony &amp; EF_MSISDN Subscriber Programmer"
+            android:textSize="13sp"
+            android:textColor="@color/text_secondary"
+            android:fontFamily="@font/google_sans_text" />
+
+        <!-- Dual Channel Buttons: MayaXDev & Itcalldeveloper -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_open_telegram"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="5dp"
+                app:cornerRadius="14dp"
+                app:icon="@drawable/ic_telegram"
+                app:iconGravity="textStart"
+                app:iconTint="@color/neon_cyan"
+                app:backgroundTint="@color/surface_cyber_elevated"
+                app:strokeColor="@color/neon_cyan"
+                app:strokeWidth="1dp"
+                android:textColor="@color/neon_cyan"
+                android:textSize="12sp"
+                android:fontFamily="@font/google_sans_text_bold"
+                android:text="@MayaXDev" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_open_dev_telegram"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="5dp"
+                app:cornerRadius="14dp"
+                app:icon="@drawable/ic_telegram"
+                app:iconGravity="textStart"
+                app:iconTint="@color/neon_violet"
+                app:backgroundTint="@color/surface_cyber_elevated"
+                app:strokeColor="@color/neon_violet"
+                app:strokeWidth="1dp"
+                android:textColor="@color/neon_violet"
+                android:textSize="12sp"
+                android:fontFamily="@font/google_sans_text_bold"
+                android:text="@Itcalldeveloper" />
+
+        </LinearLayout>
+
+        <!-- GitHub Live Update Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_check_update"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:cornerRadius="14dp"
+            app:icon="@drawable/ic_refresh"
+            app:iconGravity="textStart"
+            app:iconTint="@color/neon_green"
+            app:backgroundTint="@color/surface_cyber_elevated"
+            app:strokeColor="@color/neon_green"
+            app:strokeWidth="1dp"
+            android:textColor="@color/neon_green"
+            android:fontFamily="@font/google_sans_text_bold"
+            android:text="⚡ Check GitHub Updates (v1.1 Latest)" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

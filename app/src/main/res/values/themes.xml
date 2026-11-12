@@ -1,0 +1,12 @@
+<resources>
+    <style name="Theme.PhoneNumberSetter" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="android:colorPrimary">@color/neon_cyan</item>
+        <item name="android:colorPrimaryDark">#00B0FF</item>
+        <item name="android:colorAccent">@color/neon_violet</item>
+        <item name="android:windowBackground">@color/bg_cyber</item>
+        <item name="android:statusBarColor">@color/bg_cyber</item>
+        <item name="android:navigationBarColor">@color/bg_cyber</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+    </style>
+</resources>

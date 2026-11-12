@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="24dp"
+    app:cardElevation="6dp"
+    app:strokeWidth="1.5dp"
+    app:strokeColor="@color/neon_violet"
+    app:cardBackgroundColor="@color/surface_cyber"
+    style="@style/Widget.Material3.CardView.Filled">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_sim_card"
+                app:tint="@color/neon_cyan" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="SIM CARD HARDWARE CHIP"
+                android:textSize="12sp"
+                android:letterSpacing="0.08"
+                android:fontFamily="@font/google_sans_text_bold"
+                android:textColor="@color/neon_cyan" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Select Slot &amp; Program Number"
+            android:textSize="18sp"
+            android:fontFamily="@font/google_sans_text_bold"
+            android:textColor="@color/text_primary" />
+
+        <!-- Dual SIM Slot Selector -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_slot_1"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                app:cornerRadius="14dp"
+                app:icon="@drawable/ic_sim_card"
+                app:iconGravity="textStart"
+                app:iconTint="@color/neon_cyan"
+                app:backgroundTint="@color/surface_cyber_elevated"
+                app:strokeColor="@color/neon_cyan"
+                app:strokeWidth="2dp"
+                android:textColor="@color/neon_cyan"
+                android:fontFamily="@font/google_sans_text_bold"
+                android:text="SIM 1 (Slot 0)" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_slot_2"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                app:cornerRadius="14dp"
+                app:icon="@drawable/ic_sim_card"
+                app:iconGravity="textStart"
+                app:iconTint="@color/text_secondary"
+                app:strokeColor="@color/card_stroke"
+                app:strokeWidth="1dp"
+                android:textColor="@color/text_secondary"
+                android:fontFamily="@font/google_sans_text_bold"
+                android:text="SIM 2 (Slot 1)" />
+
+        </LinearLayout>
+
+        <!-- Current Stored SIM Number Monitor -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="14dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/card_stroke"
+            app:cardBackgroundColor="@color/surface_cyber_elevated"
+            style="@style/Widget.Material3.CardView.Outlined">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="14dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="STORED MSISDN ON SIM CHIP:"
+                    android:textSize="10sp"
+                    android:letterSpacing="0.06"
+                    android:textColor="@color/text_secondary"
+                    android:fontFamily="@font/google_sans_text_bold" />
+
+                <TextView
+                    android:id="@+id/main_loaded_card_edit_current"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/main_loaded_card_edit_content"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/google_sans_text_bold"
+                    android:textColor="@color/neon_green" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Number Input Box -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/main_loaded_card_edit_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="New Mobile Number (+91...)"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp"
+            app:boxStrokeColor="@color/neon_cyan"
+            app:boxBackgroundColor="@color/surface_cyber_elevated"
+            app:hintTextColor="@color/neon_cyan"
+            app:counterMaxLength="20"
+            app:counterEnabled="true"
+            app:counterTextColor="@color/text_secondary"
+            app:endIconMode="clear_text">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/main_loaded_card_edit_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:fontFamily="@font/google_sans_text_bold" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Live Validation Text -->
+        <TextView
+            android:id="@+id/val_feedback_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="4dp"
+            android:text="@string/val_invalid_format"
+            android:textSize="12sp"
+            android:textColor="@color/neon_red"
+            android:visibility="gone"
+            android:fontFamily="@font/google_sans_text" />
+
+        <!-- Write Number CTA Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/main_loaded_card_edit_input_save"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="16dp"
+            app:cornerRadius="16dp"
+            app:icon="@drawable/ic_save"
+            app:iconGravity="textStart"
+            app:iconTint="#0A0E17"
+            app:backgroundTint="@color/neon_cyan"
+            android:textColor="#0A0E17"
+            android:textSize="14sp"
+            android:letterSpacing="0.04"
+            android:fontFamily="@font/google_sans_text_bold"
+            android:text="WRITE &amp; SAVE TO SIM CARD" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

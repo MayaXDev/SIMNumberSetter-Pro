@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Check for Updates (GitHub)"
+        android:id="@+id/menu_check_updates"
+        app:showAsAction="never"/>
+    <item android:title="@string/menu_telegram"
+        android:id="@+id/menu_telegram"
+        app:showAsAction="never"/>
+    <item android:title="@string/menu_telegram_dev"
+        android:id="@+id/menu_telegram_dev"
+        app:showAsAction="never"/>
+    <item android:title="@string/menu_telegram_support"
+        android:id="@+id/menu_telegram_support"
+        app:showAsAction="never"/>
+    <item android:title="@string/menu_restart_telephony"
+        android:id="@+id/menu_restart_telephony"
+        app:showAsAction="never"/>
+</menu>
