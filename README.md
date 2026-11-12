@@ -42,7 +42,7 @@ Engineered and maintained by **[@MayaXDev](https://t.me/MayaXDev)** & **[@Itcall
 1. Install and launch **SIM Number Setter Pro**.
 2. Tap **"AUTO-GRANT PRIVILEGES"** when prompted for Superuser access (APatch / KernelSU / Magisk).
 3. Select your target slot: **SIM 1 (Slot 0)** or **SIM 2 (Slot 1)**.
-4. Input your mobile number with country code (e.g. `+919876543210` or `+12025550143`).
+4. Input your mobile number with country code (e.g. `+91XXXXXXXXXX`).
 5. Tap **"WRITE & SAVE TO SIM CARD"**. The app executes direct root NVRAM commit and refreshes the telephony stack.
 
 ### Path B: LSPosed System Framework Hook Mode
