@@ -178,14 +178,6 @@ class MainFragment: Fragment() {
 
     private fun setupTerminal() {
         with(binding.includeMainLoaded.includeMainLoadedCardTerminal) {
-            btnTerminalExec.setOnClickListener {
-                val cmd = inputTerminalCmd.text?.toString() ?: ""
-                if (cmd.isNotBlank()) {
-                    viewModel.executeTerminalCommand(cmd)
-                    inputTerminalCmd.setText("")
-                }
-            }
-
             btnCmdQuerySiminfo.setOnClickListener {
                 viewModel.executeTerminalCommand("content query --uri content://telephony/siminfo --projection sim_id:number")
             }
