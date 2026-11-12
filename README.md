@@ -1,11 +1,15 @@
-# SIM Number Setter Pro (Universal Android Edition)
+# SIM Number Setter Pro `v1.1` (Cyber Edition)
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Release-v1.5--Universal-00F5FF?style=for-the-badge&logo=android&logoColor=black" />
+  <img src="https://img.shields.io/badge/Release-v1.1-00F5FF?style=for-the-badge&logo=android&logoColor=black" />
   <img src="https://img.shields.io/badge/Dual--Engine-LSPosed%20%2B%20Root%20Fallback-7B2CBF?style=for-the-badge&logo=codeforces&logoColor=white" />
   <img src="https://img.shields.io/badge/Android-8.0%20to%2016%20(API%2026--36)-00FF66?style=for-the-badge&logo=android" />
   <img src="https://img.shields.io/badge/Telegram-@MayaXDev-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" />
   <img src="https://img.shields.io/badge/Developer-@Itcalldeveloper-9D4EDD?style=for-the-badge&logo=telegram&logoColor=white" />
+</p>
+
+<p align="center">
+  <img src="logo_512.png" width="160" alt="SIM Number Setter Pro Logo" style="border-radius: 24px;" />
 </p>
 
 ---
