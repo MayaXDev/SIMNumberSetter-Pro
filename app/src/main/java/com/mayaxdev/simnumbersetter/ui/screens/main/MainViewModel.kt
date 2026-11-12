@@ -34,6 +34,7 @@ abstract class MainViewModel : ViewModel() {
     abstract fun openDevTelegram(context: Context)
     abstract fun openGitHubReleases(context: Context)
     abstract fun grantAllPermissionsViaRoot()
+    abstract suspend fun uninstallLegacyAppViaRoot(): Boolean
 
     sealed class State {
         data class Loading(val loadType: LoadType) : State()
@@ -147,6 +148,15 @@ class MainViewModelImpl(
                 "pm grant com.mayaxdev.simnumbersetter android.permission.READ_PHONE_NUMBERS; " +
                 "pm grant com.mayaxdev.simnumbersetter android.permission.DUMP"
             )
+        }
+    }
+
+    override suspend fun uninstallLegacyAppViaRoot(): Boolean {
+        return try {
+            val res = rootRepository.runRootCommand("pm uninstall com.kieronquinn.app.simnumbersetter")
+            res.isSuccess
+        } catch (t: Throwable) {
+            false
         }
     }
 

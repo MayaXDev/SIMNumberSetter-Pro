@@ -1,5 +1,7 @@
 package com.mayaxdev.simnumbersetter.ui.screens.main
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.MenuInflater
@@ -62,6 +64,53 @@ class MainFragment: Fragment() {
         setupDiagnostics()
         setupSlotSelector()
         setupGuide()
+        checkAndPromptLegacyPackageUninstall()
+    }
+
+    private fun checkAndPromptLegacyPackageUninstall() {
+        val legacyPackage = "com.kieronquinn.app.simnumbersetter"
+        val pm = requireContext().packageManager
+        val isInstalled = try {
+            pm.getPackageInfo(legacyPackage, 0)
+            true
+        } catch (e: Exception) {
+            false
+        }
+
+        if (isInstalled) {
+            com.google.android.material.dialog.MaterialAlertDialogBuilder(requireContext())
+                .setTitle(R.string.dialog_legacy_conflict_title)
+                .setMessage(R.string.dialog_legacy_conflict_message)
+                .setCancelable(false)
+                .setPositiveButton(R.string.btn_uninstall_legacy) { _, _ ->
+                    // Attempt root uninstall first, fallback to system package uninstaller intent
+                    viewLifecycleOwner.lifecycleScope.launchWhenResumed {
+                        val rootResult = viewModel.uninstallLegacyAppViaRoot()
+                        if (!rootResult) {
+                            try {
+                                val intent = Intent(Intent.ACTION_UNINSTALL_PACKAGE).apply {
+                                    data = Uri.parse("package:$legacyPackage")
+                                    putExtra(Intent.EXTRA_RETURN_RESULT, true)
+                                }
+                                startActivity(intent)
+                            } catch (t: Throwable) {
+                                val intent = Intent(Intent.ACTION_DELETE).apply {
+                                    data = Uri.parse("package:$legacyPackage")
+                                }
+                                startActivity(intent)
+                            }
+                        } else {
+                            android.widget.Toast.makeText(
+                                requireContext(),
+                                "Purana app successfully uninstall ho gaya!",
+                                android.widget.Toast.LENGTH_LONG
+                            ).show()
+                        }
+                    }
+                }
+                .setNegativeButton(R.string.btn_ignore_legacy, null)
+                .show()
+        }
     }
 
     private fun setupPermissions() {

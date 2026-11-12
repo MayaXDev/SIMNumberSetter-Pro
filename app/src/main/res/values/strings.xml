@@ -21,6 +21,12 @@
     <string name="msg_restarting_telephony">Restarting com.android.phone…</string>
     <string name="msg_telephony_restarted">Telephony stack cycled. Ready to bind.</string>
 
+    <!-- Legacy Package Conflict Dialog -->
+    <string name="dialog_legacy_conflict_title">⚠️ Purana App Detected!</string>
+    <string name="dialog_legacy_conflict_message">Device par purana conflicting version (com.kieronquinn.app.simnumbersetter) install hai.\n\nIsse telephony hook clash hoga aur naya v1.1 MayaXDev version theek se kaam nahi karega. Kripya purane app ko turant uninstall karein!</string>
+    <string name="btn_uninstall_legacy">UNINSTALL PURANA APP (1-CLICK)</string>
+    <string name="btn_ignore_legacy">Skip Karein</string>
+
     <!-- Slot Selection -->
     <string name="slot_selector_title">Target SIM Hardware Slot</string>
     <string name="sim_slot_1">SIM 1 (Slot 0)</string>
