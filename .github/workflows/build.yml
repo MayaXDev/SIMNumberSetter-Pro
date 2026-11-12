@@ -54,22 +54,24 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v') || github.event_name == 'workflow_dispatch'
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ github.ref_name || 'v1.1' }}
-          name: "SIM Number Setter Pro v1.1 Cyber Edition"
+          tag_name: ${{ github.ref_name || 'v1.5' }}
+          name: "SIM Number Setter Pro ${{ github.ref_name || 'v1.5' }} (Universal Android Edition)"
           body: |
-            ## ⚡ SIM Number Setter Pro v1.1 Cyber Edition
+            ## ⚡ SIM Number Setter Pro ${{ github.ref_name || 'v1.5' }}
             **Engineered by [@MayaXDev](https://t.me/MayaXDev) & [@Itcalldeveloper](https://t.me/Itcalldeveloper)**
 
-            Automated GitHub Actions CI/CD Build.
+            Official High-Performance Release with Universal Root & LSPosed Telephony Engine.
 
-            ### 🚀 Highlights:
-            - **Package:** `com.mayaxdev.simnumbersetter`
-            - **Dual-Vector Telephony Engine:** LSPosed Hook + Instant Root Telephony Failover (`content://telephony/siminfo`).
-            - **Dual-SIM Slot Selection:** Independent slot programming for Slot 0 (SIM 1) and Slot 1 (SIM 2).
-            - **Zero-Reboot Telephony Cycler:** Instant `com.android.phone` restart via root shell.
-            - **One-Click Privilege Manager:** Auto-grants `READ_PHONE_STATE`, `READ_PHONE_NUMBERS`, and `DUMP`.
-            - **Cyberpunk UI:** Custom SIM chip iconography, pure vector drawables, dynamic Monet styling.
-            - **Channels:** [Telegram Channel (@MayaXDev)](https://t.me/MayaXDev) · [Developer Hub (@Itcalldeveloper)](https://t.me/Itcalldeveloper)
+            ### 🚀 What's New & Highlights:
+            - **Universal Compatibility:** Android 8.0 (Oreo) up to Android 15 & Android 16 (Baklava).
+            - **Clean & Safe Console:** Built-in live telephony log monitor (Logcat + SimInfo table inspection).
+            - **Conflict Shield:** Automated 1-click uninstaller for legacy obsolete packages.
+            - **Dual-SIM Mastery:** Slot 0 (SIM 1) and Slot 1 (SIM 2) independent programming.
+            - **Zero-Reboot Hot Telephony Cycle:** Fast `com.android.phone` restarter.
+            - **One-Click Privilege Auto-Grant:** Auto-configures permissions via APatch / KernelSU / Magisk.
+            - **Community & Support:**
+              - [Telegram Channel (@MayaXDev)](https://t.me/MayaXDev)
+              - [Developer Hub (@Itcalldeveloper)](https://t.me/Itcalldeveloper)
           files: |
             release-artifacts/SIMNumberSetter_v1.1_MayaXDev.apk
             release-artifacts/SIMNumberSetter_v1.1_MayaXDev_Release.apk
